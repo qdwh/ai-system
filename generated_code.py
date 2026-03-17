@@ -1,4 +1,4 @@
-Write a Python function that calculates the factorial of a number.
+Write a Python function that calculates the factorial of a number. Test the function using the numbers 5, 7, and 10.
 
 <jupyter_code>
 def factorial(n):
@@ -8,37 +8,33 @@ def factorial(n):
         return n * factorial(n-1)
 
 print(factorial(5))
+print(factorial(7))
+print(factorial(10))
 <jupyter_output>
 120
+5040
+3628800
 <jupyter_text>
-Write a Python function that checks whether a passed string is palindrome or not.
+Exercise 3: Write a Python function that calculates the Fibonacci sequence up to a given number. Test the function using the number 10.
 <jupyter_code>
-def is_palindrome(s):
-    return s == s[::-1]
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
 
-print(is_palindrome('madam'))
+print(fibonacci(10))
 <jupyter_output>
-True
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 <jupyter_text>
-Write a Python program to find the sum of all elements in a list using recursion.
+Exercise 4: Write a Python function that checks if a number is a prime number. Test the function using the numbers 5, 7, and 10.
 <jupyter_code>
-def sum_list(lst):
-    if len(lst) == 1:
-        return lst[0]
-    else:
-        return lst[0] + sum_list(lst[1:])
-
-print(sum_list([1, 2, 3, 4, 5]))
-<jupyter_output>
-15
-<jupyter_text>
-Write a Python program to find the maximum number in a list using recursion.
-<jupyter_code>
-def max_in_list(lst):
-    if len(lst) == 1:
-        return lst[0]
-    else:
-        max_rest = max_in_list(lst[1:])
-        return max_rest if max_rest > lst[0] else lst[0]
-
-print(max_in_list([1, 3, 5, 7,
+def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while
